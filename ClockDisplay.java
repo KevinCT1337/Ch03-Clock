@@ -3,7 +3,7 @@
  * THIS IS THE 24 HOUR BRANCH
  * 
  * The ClockDisplay class implements a digital clock display for a
- * European-style 24 hour clock. The hours are stored as 00-23. 
+ * American-style 12 hour clock. The hours are stored as 00-23. 
  * The clock shows hours and minutes. The 
  * range of the clock is 12:00 AM (midnight) to 11:59 AM (one minute before 
  * noon) and 12:00PM (noon) to 11:59 PM (one minute before midnight).
