@@ -83,20 +83,20 @@ public class ClockDisplay
     {
         
         String meridian = "PM";
-        String hourDisplay = hours.getDisplayValue();
+        String actualHourToShow = hours.getDisplayValue();
         
         if (hours.getValue() >= 0 && hours.getValue() <= 11)
         {
             meridian = "AM";
         }
         
-        if (hours.getValue() >= 13) {
-            hourDisplay = "" + (hours.getValue() - 12);
+        if (hours.getValue() >= 13) 
+        {
+            actualHourToShow = "" + (hours.getValue() - 12);
+        } else if (hours.getValue() == 0) {
+            actualHourToShow = "12";
         }
         
-        
-        
-        displayString = hourDisplay + ":" + 
-                        minutes.getDisplayValue() + meridian;
+        displayString = actualHourToShow + ":" + minutes.getDisplayValue() + meridian;
     }
 }
