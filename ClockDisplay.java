@@ -81,7 +81,22 @@ public class ClockDisplay
      */
     private void updateDisplay()
     {
-        displayString = hours.getDisplayValue() + ":" + 
-                        minutes.getDisplayValue();
+        
+        String meridian = "PM";
+        String hourDisplay = hours.getDisplayValue();
+        
+        if (hours.getValue() >= 0 && hours.getValue() <= 11)
+        {
+            meridian = "AM";
+        }
+        
+        if (hours.getValue() >= 13) {
+            hourDisplay = "" + (hours.getValue() - 12);
+        }
+        
+        
+        
+        displayString = hourDisplay + ":" + 
+                        minutes.getDisplayValue() + meridian;
     }
 }
