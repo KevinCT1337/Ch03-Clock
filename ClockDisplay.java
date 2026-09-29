@@ -52,10 +52,10 @@ public class ClockDisplay
     public void timeTick()
     {
         minutes.increment();
-        if(minutes.getValue() == 0) {  // it just rolled over!
+        if(minutes.getValue() == 0) {  // minutes rolled over!
             hours.increment();
             
-            if(hours.getValue() == 0) {  // it just rolled over!
+            if(hours.getValue() == 0) {  // hour rolled over!
                 if (meridian == "PM"){
                     meridian = "AM";
                 } else {
@@ -94,13 +94,13 @@ public class ClockDisplay
     private void updateDisplay()
     {
         
-        String actualHour = hours.getDisplayValue();
+        String actualHourToShow = hours.getDisplayValue();
         
         if (hours.getValue() == 0){
-            actualHour = "12";
+            actualHourToShow = "12";
         }
         
-        displayString = actualHour + ":" + 
+        displayString = actualHourToShow + ":" + 
                         minutes.getDisplayValue() + meridian;
     }
 }
